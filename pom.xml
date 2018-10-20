@@ -8,7 +8,7 @@
 	<artifactId>test-maven-plugin</artifactId>
 	<version>1-SNAPSHOT</version>
 	<packaging>maven-plugin</packaging>
-	
+
 	<!-- -->
 
 	<properties>
@@ -19,6 +19,16 @@
 	<!-- -->
 
 	<dependencies>
+
+		<!-- -->
+
+		<dependency>
+			<groupId>de.ratopi</groupId>
+			<artifactId>traverse</artifactId>
+			<version>1</version>
+		</dependency>
+
+		<!-- -->
 
 		<dependency>
 			<groupId>org.apache.maven</groupId>
@@ -56,13 +66,26 @@
 					<execution>
 						<phase>compile</phase>
 						<goals>
-							<goal>sayhi</goal>
+							<goal>checkcode</goal>
 						</goals>
 					</execution>
 				</executions>
 			</plugin>
 		</plugins>
 	</build>
+
+	<!-- -->
+
+	<repositories>
+		<repository>
+			<id>ratopi.de releases</id>
+			<url>http://ratopi.github.io/maven/releases/</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+
 	<!-- -->
 
 </project>
